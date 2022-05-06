@@ -1,12 +1,13 @@
 // FC functional components
 import React, { useState } from 'react';
+import { AddCategory } from './components/AddCategory';
 const GifExpertApp = () => {
 
     let categoryList = ['cat 1', 'cat 2', 'cat 3']
     //const categories = ['cat 1', 'cat 2', 'cat 3']
     const [categories, addCategory] = useState(categoryList)
 
-    const handleAddCategory = () => {
+    /*const handleAddCategory = () => {
 
         //first way
         //addCategory([...categories, 'cat ' + (categories.length + 1)]);
@@ -14,7 +15,7 @@ const GifExpertApp = () => {
         //other way, cats is a callback function with the original categories list
         addCategory(cats => [...cats, 'cat ' + (categories.length + 1)]);
 
-    }
+    }*/
 
 
 
@@ -22,7 +23,7 @@ const GifExpertApp = () => {
         <>
             <h2>GifExpertApp</h2>
             <hr />
-            {categoryList}  /  {categories}
+            <AddCategory list={categories} addCategory={addCategory} />
             <ul>
                 {
                     categories.map(category => {
@@ -30,7 +31,7 @@ const GifExpertApp = () => {
                     })
                 }
             </ul>
-            <button onClick={handleAddCategory}>Agregar</button>
+
         </>
     );
 
