@@ -38,7 +38,7 @@ export const AddCategory = ({ list, addCategory }) => {
     const handleAddCategory = (category) => {
 
         //other way, cats is a callback function with the original categories list
-        addCategory(cats => [...cats, category]);
+        addCategory(cats => [category, ...cats]);
         setInputValue("");
 
         setError(`Added ${category}`);
